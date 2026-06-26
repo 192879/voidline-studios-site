@@ -419,10 +419,40 @@ function Loader({ locale }: { locale: Locale }) {
     <motion.div
       className="loader"
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: 0.5 } }}
+      exit={{
+        opacity: 0,
+        filter: "blur(10px)",
+        transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+      }}
     >
-      <div className="loader-mark">
-        <Image src={asset("/brand/vl-mark.svg")} alt="" width={110} height={110} priority />
+      <div className="loader-bg" aria-hidden="true">
+        <Image src={asset("/visuals/hero-cinematic.png")} alt="" fill priority sizes="100vw" />
+      </div>
+      <div className="loader-frame" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="loader-core">
+        <div className="loader-mark">
+          <Image
+            src={asset("/brand/vl-mark.svg")}
+            alt=""
+            width={132}
+            height={132}
+            priority
+          />
+        </div>
+        <div className="loader-identity">
+          <span>{brand.english}</span>
+          <span>{brand.chinese}</span>
+        </div>
+      </div>
+      <div className="loader-gauge" aria-hidden="true">
+        <span />
+        <span />
+        <span />
       </div>
       <div className="loader-line">
         <span />
