@@ -28,6 +28,13 @@ import {
 import type { Locale, Project } from "@/types/content";
 
 const iconMap = [Film, Layers3, Sparkles, ArrowRight];
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function asset(path: string) {
+  if (!path) return path;
+  if (path.startsWith("http")) return path;
+  return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+}
 
 function t(text: Record<Locale, string>, locale: Locale) {
   return text[locale];
@@ -77,7 +84,9 @@ export function StudioSite() {
       <AnimatePresence>{loading && <Loader locale={locale} />}</AnimatePresence>
       <header className="site-header">
         <a className="mark" href="#top" aria-label="Voidline Studios">
-          <span>VL</span>
+          <span>
+            <Image src={asset("/brand/vl-mark.svg")} alt="" width={38} height={38} />
+          </span>
           <small>{brand.english}</small>
         </a>
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -134,7 +143,7 @@ export function StudioSite() {
         <section className="hero-section">
           <div className="hero-backdrop" aria-hidden="true">
             <Image
-              src="/visuals/hero-cinematic.png"
+              src={asset("/visuals/hero-cinematic.png")}
               alt=""
               fill
               priority
@@ -142,7 +151,7 @@ export function StudioSite() {
               className="hero-bg-image"
             />
             <Image
-              src="/brand/voidline-logo.jpg"
+              src={asset("/brand/voidline-logo.jpg")}
               alt=""
               width={1200}
               height={1200}
@@ -176,7 +185,7 @@ export function StudioSite() {
             </div>
           </motion.div>
           <div className="hero-signature" aria-hidden="true">
-            <Image src="/brand/vl-mark.svg" alt="" width={124} height={124} />
+            <Image src={asset("/brand/vl-mark.svg")} alt="" width={124} height={124} />
           </div>
           <div className="scroll-cue">Visual / Motion / Intelligence</div>
         </section>
@@ -212,10 +221,10 @@ export function StudioSite() {
             </h2>
           </div>
           <div className="visual-frame large">
-            <Image src="/visuals/hero-cinematic.png" alt="" fill sizes="60vw" />
+            <Image src={asset("/visuals/hero-cinematic.png")} alt="" fill sizes="60vw" />
           </div>
           <div className="visual-frame small">
-            <Image src="/brand/voidline-logo.jpg" alt="" fill sizes="34vw" />
+            <Image src={asset("/brand/voidline-logo.jpg")} alt="" fill sizes="34vw" />
           </div>
         </section>
 
@@ -341,7 +350,7 @@ export function StudioSite() {
 
       <footer className="footer">
         <div>
-          <Image src="/brand/vl-mark.svg" alt="" width={42} height={42} />
+          <Image src={asset("/brand/vl-mark.svg")} alt="" width={42} height={42} />
           <strong>{brand.english}</strong>
           <span>{brand.chinese}</span>
         </div>
@@ -412,7 +421,9 @@ function Loader({ locale }: { locale: Locale }) {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.5 } }}
     >
-      <div className="loader-mark">VL</div>
+      <div className="loader-mark">
+        <Image src={asset("/brand/vl-mark.svg")} alt="" width={110} height={110} priority />
+      </div>
       <div className="loader-line">
         <span />
       </div>
@@ -481,7 +492,12 @@ function ProjectCard({
     <article className="project-card">
       <div className="project-media">
         {project.cover ? (
-          <Image src={project.cover} alt="" fill sizes="(max-width: 900px) 100vw, 33vw" />
+          <Image
+            src={asset(project.cover)}
+            alt=""
+            fill
+            sizes="(max-width: 900px) 100vw, 33vw"
+          />
         ) : (
           <div className="project-placeholder">
             <span>VL</span>

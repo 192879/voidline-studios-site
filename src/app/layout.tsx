@@ -12,12 +12,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: "Voidline Studios / 未界影像",
   description:
     "A bilingual brand website for Voidline Studios, a visual content and AIGC creative studio.",
   icons: {
-    icon: "/brand/voidline-logo.jpg",
+    icon: `${basePath}/brand/voidline-logo.jpg`,
   },
 };
 

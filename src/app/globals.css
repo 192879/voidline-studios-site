@@ -71,6 +71,7 @@ button {
 }
 
 .loader-mark {
+  position: relative;
   width: 110px;
   height: 110px;
   display: grid;
@@ -83,11 +84,29 @@ button {
   color: #eee9dc;
   font: 600 30px/1 var(--font-geist-mono);
   letter-spacing: 0.05em;
-  font-size: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-    url("/brand/vl-mark.svg") center / cover no-repeat;
   animation: markPulse 1.5s ease-in-out infinite;
+}
+
+.loader-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1);
+}
+
+.loader-mark::after {
+  position: absolute;
+  inset: -28%;
+  content: "";
+  background: linear-gradient(
+    115deg,
+    transparent 0 42%,
+    rgba(255, 255, 255, 0.72) 48%,
+    transparent 55% 100%
+  );
+  mix-blend-mode: screen;
+  transform: translateX(-90%);
+  animation: markSweep 1.7s ease-in-out infinite;
 }
 
 .loader-line {
@@ -145,10 +164,13 @@ button {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03));
   color: #ede9df;
   font: 600 12px/1 var(--font-geist-mono);
-  font-size: 0;
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
-    url("/brand/vl-mark.svg") center / cover no-repeat;
+  overflow: hidden;
+}
+
+.mark span img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mark small,
@@ -969,6 +991,22 @@ button {
   50% {
     border-color: rgba(255, 255, 255, 0.46);
     filter: brightness(1.22);
+  }
+}
+
+@keyframes markSweep {
+  0%,
+  24% {
+    transform: translateX(-90%) rotate(0deg);
+    opacity: 0;
+  }
+  42% {
+    opacity: 0.75;
+  }
+  68%,
+  100% {
+    transform: translateX(100%) rotate(0deg);
+    opacity: 0;
   }
 }
 
