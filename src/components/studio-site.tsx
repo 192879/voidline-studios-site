@@ -134,12 +134,20 @@ export function StudioSite() {
         <section className="hero-section">
           <div className="hero-backdrop" aria-hidden="true">
             <Image
-              src="/brand/voidline-logo.jpg"
+              src="/visuals/hero-cinematic.png"
               alt=""
               fill
               priority
               sizes="100vw"
-              className="hero-logo-image"
+              className="hero-bg-image"
+            />
+            <Image
+              src="/brand/voidline-logo.jpg"
+              alt=""
+              width={1200}
+              height={1200}
+              priority
+              className="hero-logo-ghost"
             />
             <div className="hero-vignette" />
             <div className="metal-line line-a" />
@@ -167,6 +175,9 @@ export function StudioSite() {
               </a>
             </div>
           </motion.div>
+          <div className="hero-signature" aria-hidden="true">
+            <Image src="/brand/vl-mark.svg" alt="" width={124} height={124} />
+          </div>
           <div className="scroll-cue">Visual / Motion / Intelligence</div>
         </section>
 
@@ -186,6 +197,25 @@ export function StudioSite() {
                 </article>
               </Reveal>
             ))}
+          </div>
+        </section>
+
+        <section className="visual-strip" aria-label="Voidline visual language">
+          <div className="visual-strip-copy">
+            <p className="eyebrow">
+              {locale === "en" ? "Visual Language" : "视觉语言"}
+            </p>
+            <h2>
+              {locale === "en"
+                ? "Black fields. Metal edges. Images with weight."
+                : "黑场、金属边缘，以及有重量的影像。"}
+            </h2>
+          </div>
+          <div className="visual-frame large">
+            <Image src="/visuals/hero-cinematic.png" alt="" fill sizes="60vw" />
+          </div>
+          <div className="visual-frame small">
+            <Image src="/brand/voidline-logo.jpg" alt="" fill sizes="34vw" />
           </div>
         </section>
 
@@ -311,6 +341,7 @@ export function StudioSite() {
 
       <footer className="footer">
         <div>
+          <Image src="/brand/vl-mark.svg" alt="" width={42} height={42} />
           <strong>{brand.english}</strong>
           <span>{brand.chinese}</span>
         </div>

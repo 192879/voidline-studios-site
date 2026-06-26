@@ -9,7 +9,7 @@ export const projects: Project[] = [
       en: "A placeholder for a future workflow case combining scripting, visual direction and production rhythm.",
       zh: "用于未来展示脚本、视觉方向与生产节奏结合方式的工作流案例占位。",
     },
-    cover: "",
+    cover: "/visuals/project-system.png",
     status: { en: "Project slot", zh: "项目占位" },
   },
   {
@@ -20,7 +20,7 @@ export const projects: Project[] = [
       en: "Designed to hold future covers, trailers and project notes for short-form story formats.",
       zh: "用于未来放置短视频叙事项目封面、预告片与说明文案。",
     },
-    cover: "",
+    cover: "/visuals/project-motion.png",
     status: { en: "Awaiting material", zh: "等待素材" },
   },
   {
@@ -31,7 +31,7 @@ export const projects: Project[] = [
       en: "A modular card ready for AI-assisted visual prototypes, mood films or concept scenes.",
       zh: "可用于展示 AI 辅助视觉原型、情绪短片或概念场景的模块化卡片。",
     },
-    cover: "",
+    cover: "/visuals/project-aigc.png",
     status: { en: "Coming Soon", zh: "即将更新" },
   },
 ];
