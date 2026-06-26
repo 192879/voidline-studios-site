@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   description:
     "A bilingual brand website for Voidline Studios, a visual content and AIGC creative studio.",
   icons: {
-    icon: `${basePath}/brand/voidline-logo.jpg`,
+    icon: `${basePath}/brand/voidline-monogram.svg`,
   },
 };
 

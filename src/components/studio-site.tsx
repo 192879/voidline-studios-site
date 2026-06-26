@@ -85,7 +85,12 @@ export function StudioSite() {
       <header className="site-header">
         <a className="mark" href="#top" aria-label="Voidline Studios">
           <span>
-            <Image src={asset("/brand/vl-mark.svg")} alt="" width={38} height={38} />
+            <Image
+              src={asset("/brand/voidline-monogram.svg")}
+              alt=""
+              width={38}
+              height={38}
+            />
           </span>
           <small>{brand.english}</small>
         </a>
@@ -151,7 +156,7 @@ export function StudioSite() {
               className="hero-bg-image"
             />
             <Image
-              src={asset("/brand/voidline-logo.jpg")}
+              src={asset("/brand/voidline-monogram.svg")}
               alt=""
               width={1200}
               height={1200}
@@ -185,7 +190,12 @@ export function StudioSite() {
             </div>
           </motion.div>
           <div className="hero-signature" aria-hidden="true">
-            <Image src={asset("/brand/vl-mark.svg")} alt="" width={124} height={124} />
+            <Image
+              src={asset("/brand/voidline-monogram.svg")}
+              alt=""
+              width={124}
+              height={124}
+            />
           </div>
           <div className="scroll-cue">Visual / Motion / Intelligence</div>
         </section>
@@ -224,7 +234,14 @@ export function StudioSite() {
             <Image src={asset("/visuals/hero-cinematic.png")} alt="" fill sizes="60vw" />
           </div>
           <div className="visual-frame small">
-            <Image src={asset("/brand/voidline-logo.jpg")} alt="" fill sizes="34vw" />
+            <div className="visual-mark-stage">
+              <Image
+                src={asset("/brand/voidline-monogram.svg")}
+                alt=""
+                width={360}
+                height={360}
+              />
+            </div>
           </div>
         </section>
 
@@ -350,7 +367,12 @@ export function StudioSite() {
 
       <footer className="footer">
         <div>
-          <Image src={asset("/brand/vl-mark.svg")} alt="" width={42} height={42} />
+          <Image
+            src={asset("/brand/voidline-monogram.svg")}
+            alt=""
+            width={42}
+            height={42}
+          />
           <strong>{brand.english}</strong>
           <span>{brand.chinese}</span>
         </div>
@@ -437,7 +459,7 @@ function Loader({ locale }: { locale: Locale }) {
       <div className="loader-core">
         <div className="loader-mark">
           <Image
-            src={asset("/brand/vl-mark.svg")}
+            src={asset("/brand/voidline-monogram.svg")}
             alt=""
             width={132}
             height={132}
