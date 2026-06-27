@@ -5,6 +5,7 @@ Independent bilingual brand site for Voidline Studios / 未界影像.
 ## Online URLs
 
 - International / VPN: https://192879.github.io/voidline-studios-site/
+- International / Vercel: https://voidline-studios-site.vercel.app/
 - China / EdgeOne public: https://voidline-studios-public-lg4vsi3d.edgeone.dev/
 - Optional branded domain target: https://www.voidlinestudios.com/
 
